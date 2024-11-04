@@ -7,7 +7,11 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      'sora': ['Sora', 'system-ui'],
+    },
   },
+
   plugins: [
     daisyui,
   ],
