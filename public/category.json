@@ -15,25 +15,11 @@
             "categoryName": "Tablets",
             "categorySlug": "tablets"
         },
+       
         {
-            "categoryId": 4,
-            "categoryName": "Wearables",
-            "categorySlug": "wearables"
-        },
-        {
-            "categoryId": 5,
-            "categoryName": "Accessories",
-            "categorySlug": "accessories"
-        },
-        {
-            "categoryId": 6,
-            "categoryName": "Smart Home",
-            "categorySlug": "smart-home"
-        },
-        {
-            "categoryId": 7,
-            "categoryName": "Audio Devices",
-            "categorySlug": "audio-devices"
+            "categoryId": 8,
+            "categoryName": "Laptop",
+            "categorySlug": "laptop"
         }
     ]
 }

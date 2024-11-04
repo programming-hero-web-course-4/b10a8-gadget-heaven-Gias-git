@@ -1,23 +1,45 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { CiHeart } from "react-icons/ci";
+import { useState } from "react";
 
 
 
 
 const Navbar = () => {
+
+    const location = useLocation();
+
+    let path = location.pathname;
     const links = <>
-        <NavLink to='/'><span className="text-white">Home</span></NavLink>
-        <NavLink to='/dashboard'><span className="text-white">Dashboard</span></NavLink>
+        <NavLink to='/'><span className={` ${path == '/' ? 'text-[white]' : 'text-[#9538E2]'}  text-base `}>Home</span></NavLink>
+        <NavLink to='/dashboard'><span className={` ${path == '/' ? 'text-[white]' : 'text-[#9538E2]'}  text-base `}>Dashboard</span></NavLink>
     </>
 
    
+
+    const getcardProduct = localStorage.getItem('product-id');
+
+    const getcardProductparse = JSON.parse(getcardProduct);
+
+    const [cardItem, setCardItem] = useState(getcardProductparse);
+
+    const getWishListItem = localStorage.getItem('wish-list');
+
+    const getwishProductparse = JSON.parse(getWishListItem);
+
+    const [wishItem, setWishItem] = useState(getwishProductparse);
+
+
+
+
+
 
     return (
 
         <div className=" mx-10">
 
-            <div className="navbar bg-[#9538E2] mt-5 rounded-t-lg py-4 px-16 ">
+            <div className={`navbar ${path == '/' ? 'bg-[#9538E2]' : 'bg-white'}  mt-5 rounded-t-lg py-4 px-16`}>
 
 
                 <div className="navbar-start">
@@ -42,7 +64,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <Link className="text-white text-xl">Gadget Heaven</Link>
+                    <Link className={` ${path == '/' ? 'text-[white]' : 'text-[#9538E2]'}  text-xl font-bold`}>Gadget Heaven</Link>
 
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -52,8 +74,10 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end space-x-4">
 
-                    <Link className="rounded-full text-2xl bg-white p-3"><MdOutlineShoppingCart /></Link>
-                    <Link className="rounded-full text-2xl bg-white p-3"><CiHeart /></Link>
+                    <Link to='/dashboard/cart' className="rounded-full flex relative text-2xl bg-white p-3"><MdOutlineShoppingCart /> <div className="absolute -top-2 bg-red-400 rounded-full -right-2 px-2 py-1 text-sm "> {cardItem? cardItem.length: '0'}  </div></Link>
+                    <Link to='/dashboard/wishlist' className="rounded-full relative text-2xl bg-white p-3"><CiHeart />
+                    <div className="absolute -top-2 bg-red-400 rounded-full -right-2 px-2 py-1 text-sm "> {wishItem? wishItem.length: '0'}  </div>
+                    </Link>
 
                 </div>
             </div>
