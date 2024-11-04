@@ -1,0 +1,243 @@
+[
+    {
+      "product_id": 101,
+      "product_title": "SuperPhone X",
+      "product_image": "superphone_x.jpg",
+      "category": "Phones",
+      "price": 999.99,
+      "description": "A high-end smartphone with cutting-edge technology.",
+      "Specification": [
+        "6.7-inch OLED display",
+        "128GB storage",
+        "Triple-lens camera",
+        "5G connectivity"
+      ],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": 102,
+      "product_title": "TabMaster Pro",
+      "product_image": "tabmaster_pro.jpg",
+      "category": "Tablets",
+      "price": 749.99,
+      "description": "A versatile tablet perfect for work and entertainment.",
+      "Specification": [
+        "11-inch Liquid Retina display",
+        "256GB storage",
+        "Dual-camera system",
+        "Stylus support"
+      ],
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": 103,
+      "product_title": "SmartFit Watch",
+      "product_image": "smartfit_watch.jpg",
+      "category": "Wearables",
+      "price": 299.99,
+      "description": "A smartwatch with fitness tracking and health monitoring features.",
+      "Specification": [
+        "1.5-inch AMOLED display",
+        "Heart rate monitoring",
+        "GPS",
+        "Water-resistant up to 50 meters"
+      ],
+      "availability": true,
+      "rating": 4.4
+    },
+    {
+      "product_id": 104,
+      "product_title": "NoiseCanceller Headphones",
+      "product_image": "noisecanceller_headphones.jpg",
+      "category": "Audio Devices",
+      "price": 199.99,
+      "description": "Over-ear headphones with active noise cancellation.",
+      "Specification": [
+        "Wireless connectivity",
+        "20-hour battery life",
+        "Comfortable ear cushions",
+        "Built-in microphone"
+      ],
+      "availability": false,
+      "rating": 4.7
+    },
+    {
+      "product_id": 105,
+      "product_title": "SmartBulb 3000",
+      "product_image": "smartbulb_3000.jpg",
+      "category": "Audio Devices",
+      "price": 49.99,
+      "description": "A smart light bulb with adjustable color and brightness.",
+      "Specification": [
+        "Wi-Fi enabled",
+        "Voice control compatible",
+        "Energy-saving mode",
+        "16 million colors"
+      ],
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": 106,
+      "product_title": "Portable Charger Pro",
+      "product_image": "portable_charger_pro.jpg",
+      "category": "Accessories",
+      "price": 59.99,
+      "description": "A high-capacity portable charger for on-the-go use.",
+      "Specification": [
+        "20,000mAh battery capacity",
+        "Fast charging",
+        "Dual USB ports",
+        "Compact design"
+      ],
+      "availability": true,
+      "rating": 4.3
+    },
+    {
+      "product_id": 107,
+      "product_title": "Galaxy Phone Z",
+      "product_image": "galaxy_phone_z.jpg",
+      "category": "Phones",
+      "price": 899.99,
+      "description": "Foldable smartphone with an innovative design.",
+      "Specification": [
+        "7.2-inch flexible display",
+        "256GB storage",
+        "Dual rear cameras",
+        "Water-resistant"
+      ],
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": 108,
+      "product_title": "MediaPad Lite",
+      "product_image": "mediapad_lite.jpg",
+      "category": "Tablets",
+      "price": 299.99,
+      "description": "Affordable tablet with great performance for everyday use.",
+      "Specification": [
+        "10.1-inch HD display",
+        "64GB storage",
+        "8MP rear camera",
+        "Up to 10 hours battery"
+      ],
+      "availability": true,
+      "rating": 4.2
+    },
+    {
+      "product_id": 109,
+      "product_title": "Fitness Band 2.0",
+      "product_image": "fitness_band_2.jpg",
+      "category": "Wearables",
+      "price": 79.99,
+      "description": "A budget-friendly fitness tracker with essential features.",
+      "Specification": [
+        "Heart rate monitor",
+        "Sleep tracking",
+        "Water-resistant",
+        "14-day battery life"
+      ],
+      "availability": true,
+      "rating": 4.1
+    },
+    {
+      "product_id": 110,
+      "product_title": "Wireless Earbuds Pro",
+      "product_image": "wireless_earbuds_pro.jpg",
+      "category": "Audio Devices",
+      "price": 129.99,
+      "description": "Compact wireless earbuds with high-quality sound.",
+      "Specification": [
+        "Touch control",
+        "Noise isolation",
+        "30 hours battery life with case",
+        "Sweat-resistant"
+      ],
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": 111,
+      "product_title": "Smart Security Camera",
+      "product_image": "smart_security_camera.jpg",
+      "category": "Smart Home",
+      "price": 149.99,
+      "description": "Home security camera with night vision and motion detection.",
+      "Specification": [
+        "1080p HD video",
+        "Two-way audio",
+        "Cloud storage compatible",
+        "Remote access"
+      ],
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": 112,
+      "product_title": "Wireless Charger Pad",
+      "product_image": "wireless_charger_pad.jpg",
+      "category": "Accessories",
+      "price": 29.99,
+      "description": "Convenient wireless charging pad for fast charging.",
+      "Specification": [
+        "Compatible with Qi-enabled devices",
+        "Overheating protection",
+        "Slim design",
+        "LED indicator"
+      ],
+      "availability": true,
+      "rating": 4.3
+    },
+    {
+      "product_id": 113,
+      "product_title": "Pro Gaming Headset",
+      "product_image": "pro_gaming_headset.jpg",
+      "category": "Audio Devices",
+      "price": 99.99,
+      "description": "Gaming headset with immersive sound and RGB lighting.",
+      "Specification": [
+        "7.1 surround sound",
+        "Adjustable microphone",
+        "Comfortable ear pads",
+        "RGB lighting"
+      ],
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": 114,
+      "product_title": "Smart Thermostat",
+      "product_image": "smart_thermostat.jpg",
+      "category": "Smart Home",
+      "price": 199.99,
+      "description": "Smart thermostat for energy-efficient home temperature control.",
+      "Specification": [
+        "Wi-Fi enabled",
+        "Remote control via app",
+        "Energy usage reports",
+        "Voice control compatible"
+      ],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": 115,
+      "product_title": "Multi-device Keyboard",
+      "product_image": "multi_device_keyboard.jpg",
+      "category": "Accessories",
+      "price": 49.99,
+      "description": "Wireless keyboard that can connect to multiple devices.",
+      "Specification": [
+        "Bluetooth connectivity",
+        "Built-in rechargeable battery",
+        "Compact design",
+        "Compatible with Windows, Mac, iOS, and Android"
+      ],
+      "availability": true,
+      "rating": 4.4
+    }
+  ]
+  

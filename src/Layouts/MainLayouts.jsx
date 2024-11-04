@@ -5,7 +5,9 @@ import { Outlet } from 'react-router-dom';
 
 const MainLayouts = () => {
     return (
-        <div className='font-sora flex flex-col min-h-screen container mx-auto px-10'>
+        <div className='font-sora flex flex-col min-h-screen'>
+
+
 
             {/* navbar */}
             <Navbar></Navbar>

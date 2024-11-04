@@ -1,14 +1,17 @@
 import React from 'react';
 
 import Banner from '../components/Banner';
-import ProductsGallery from '../components/Productsgallery';
+import ProductMianGallarey from '../components/ProductMianGallarey';
+
+
+
 
 const Home = () => {
     return (
-        <div>
+        <div className='bg-gray-100 container mx-auto px-10'>
             <Banner></Banner>
+            <ProductMianGallarey></ProductMianGallarey>
 
-            <ProductsGallery></ProductsGallery>
         </div>
 
     );
