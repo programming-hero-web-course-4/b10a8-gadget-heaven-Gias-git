@@ -1,38 +1,49 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { CiHeart } from "react-icons/ci";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+
+
+
 
 
 
 
 const Navbar = () => {
 
+
+
+
+
+
+    const [cardProducts, setCardProducts] = useState([]);
+
+
+
+    useEffect(() => {
+        const cartsDataLocalStorage = JSON.parse(localStorage.getItem('cart-item'));
+        // console.log(cartsDataLocalStorage)
+        setCardProducts(cartsDataLocalStorage)
+    }, [])
+
+
     const location = useLocation();
 
     let path = location.pathname;
     const links = <>
-        <NavLink to='/'><span className={` ${path == '/' ? 'text-[white]' : 'text-[#9538E2]'}  text-base `}>Home</span></NavLink>
-        <NavLink to='/dashboard'><span className={` ${path == '/' ? 'text-[white]' : 'text-[#9538E2]'}  text-base `}>Dashboard</span></NavLink>
+        <NavLink className={({ isActive }) =>
+            isActive ? 'bg-white rounded-lg text-white'
+                : ''
+        } to='/'><span className={` ${path == '/' ? 'text-[#9538E2]' : 'text-[#9538E2]'}  text-base px-4`}>Home</span></NavLink>
+        <NavLink className={({ isActive }) =>
+            isActive ? 'bg-slate-300 rounded-lg text-white'
+                : ''
+        } to='/dashboard'><span className={` ${path == '/' ? 'text-[white]' : 'text-[#9538E2]'}  text-base px-4 `}>Dashboard</span></NavLink>
+        <NavLink className={({ isActive }) =>
+            isActive ? 'bg-slate-300 rounded-lg text-white'
+                : ''
+        } to='/stats'><span className={` ${path == '/' ? 'text-[white]' : 'text-[#9538E2]'} text-base  px-4 py-5`}>Stats</span></NavLink>
     </>
-
-   
-
-    const getcardProduct = localStorage.getItem('product-id');
-
-    const getcardProductparse = JSON.parse(getcardProduct);
-
-    const [cardItem, setCardItem] = useState(getcardProductparse);
-
-    const getWishListItem = localStorage.getItem('wish-list');
-
-    const getwishProductparse = JSON.parse(getWishListItem);
-
-    const [wishItem, setWishItem] = useState(getwishProductparse);
-
-
-
-
 
 
     return (
@@ -74,9 +85,9 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end space-x-4">
 
-                    <Link to='/dashboard/cart' className="rounded-full flex relative text-2xl bg-white p-3"><MdOutlineShoppingCart /> <div className="absolute -top-2 bg-red-400 rounded-full -right-2 px-2 py-1 text-sm "> {cardItem? cardItem.length: '0'}  </div></Link>
+                    <Link to='/dashboard/cart' className="rounded-full flex relative text-2xl bg-white p-3"><MdOutlineShoppingCart /> <div className="absolute -top-2 bg-red-400 rounded-full -right-2 px-2 py-1 text-sm ">{cardProducts ? cardProducts.length : '0'} </div> </Link>
                     <Link to='/dashboard/wishlist' className="rounded-full relative text-2xl bg-white p-3"><CiHeart />
-                    <div className="absolute -top-2 bg-red-400 rounded-full -right-2 px-2 py-1 text-sm "> {wishItem? wishItem.length: '0'}  </div>
+                        <div className="absolute -top-2 bg-red-400 rounded-full -right-2 px-2 py-1 text-sm ">  </div>
                     </Link>
 
                 </div>

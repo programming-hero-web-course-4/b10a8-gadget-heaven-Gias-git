@@ -9,6 +9,7 @@ import Products from "../components/Products";
 import DetailsPage from "../Pages/DetailsPage";
 import Cart from "../components/Cart";
 import Wishlist from "../components/Wishlist";
+import Stats from "../Pages/Stats";
 
 const routes = createBrowserRouter([
     {
@@ -34,9 +35,18 @@ const routes = createBrowserRouter([
 
             },
             {
+                path: "Stats",
+                element: <Stats></Stats>,
+
+            },
+            {
                 path: "dashboard",
                 element: <Dashboard></Dashboard>,
                 children: [
+                    {
+                        path: "/dashboard",
+                        element: <Cart></Cart>
+                    },
                     {
                         path: "cart",
                         element: <Cart></Cart>

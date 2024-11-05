@@ -11,9 +11,6 @@ const Products = () => {
     const [categoryProducts, setCategoryProducts] = useState([]);
 
 
-
-
-
     useEffect((() => {
 
 

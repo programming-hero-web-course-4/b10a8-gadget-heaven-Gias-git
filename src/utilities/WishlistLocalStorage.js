@@ -1,6 +1,6 @@
 
 
-const getLocalStoageData = () => {
+const getwishLocalStoageData = () => {
 
     const storedListStorage = localStorage.getItem('wish-list');
 
@@ -13,21 +13,19 @@ const getLocalStoageData = () => {
 
 }
 
-const addWishListTolocalStorage = (productId) => {
+const addWishListTolocalStorage = (detailData) => {
 
-    const storedList = getLocalStoageData();
-    console.log(storedList)
-    if (storedList.includes(productId)) {
-        alert('Wiahlist already added')
-    } 
-    
-    else {
-        storedList.push(productId)
-        const storedListstr = JSON.stringify(storedList);
-        localStorage.setItem('wish-list', storedListstr)
+
+    const wishList = getwishLocalStoageData();
+    const isExist = wishList.find(item => item.product_id == detailData.product_id);
+
+    if (isExist) {
+        return alert('already')
     }
 
-    console.log(storedListstr)
+    wishList.push(detailData);
+
+    localStorage.setItem('wish-list', JSON.stringify(wishList))
 }
 
-export {addWishListTolocalStorage}
+export {addWishListTolocalStorage, getwishLocalStoageData}

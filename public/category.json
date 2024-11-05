@@ -20,6 +20,11 @@
             "categoryId": 8,
             "categoryName": "Laptop",
             "categorySlug": "laptop"
+        },
+        {
+            "categoryId": 9,
+            "categoryName": "Charger",
+            "categorySlug": "charger"
         }
     ]
 }

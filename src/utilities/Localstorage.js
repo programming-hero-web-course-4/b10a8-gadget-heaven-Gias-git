@@ -1,33 +1,27 @@
 
+const getLocalStorageData = () => {
+    try {
+        const storedListStorage = localStorage.getItem('cart-item');
+        return storedListStorage ? JSON.parse(storedListStorage) : [];
+    } catch (error) {
+        console.error("Error parsing JSON from localStorage:", error);
+        return [];
+    }
+};
 
-const getLocalStoageData = () => {
 
-    const storedListStorage = localStorage.getItem('product-id');
+const addTolocalStorage = (detailData) => {
 
-    if (storedListStorage) {
-        const storedList = JSON.parse(storedListStorage);
-        return storedList;
-    } else {
-        return []
+    const cardList = getLocalStorageData();
+    const isExist = cardList.find(item => item.product_id == detailData.product_id);
+
+    if (isExist) {
+        return alert('already')
     }
 
+    cardList.push(detailData);
+
+    localStorage.setItem('cart-item', JSON.stringify(cardList))
 }
 
-const addTolocalStorage = (productId) => {
-
-    const storedList = getLocalStoageData();
-    console.log(storedList)
-    if (storedList.includes(productId)) {
-        alert('already added')
-    } 
-    
-    else {
-        storedList.push(productId)
-        const storedListstr = JSON.stringify(storedList);
-        localStorage.setItem('product-id', storedListstr)
-    }
-
-    console.log(storedListstr)
-}
-
-export {addTolocalStorage}
+export { addTolocalStorage, getLocalStorageData }
