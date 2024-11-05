@@ -5,6 +5,10 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { CiHeart } from "react-icons/ci";
 import { addTolocalStorage, getLocalStorageData } from '../utilities/Localstorage';
 import { addWishListTolocalStorage, getwishLocalStoageData } from '../utilities/WishlistLocalStorage';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 
 const DetailsPage = () => {
@@ -33,15 +37,14 @@ const DetailsPage = () => {
     const handleAddToCard = (detailData) => {
         addTolocalStorage(detailData);
         setIsdisableCartBtn(true);
-
+        toast.success('Product Add Cart Successfully')
 
     }
 
     const handlewishlist = (detailData) => {
         setIsdisablewishtBtn(true)
         addWishListTolocalStorage(detailData);
-
-
+        toast.success('Product Add WishList Successfully')
     }
 
 
@@ -78,7 +81,7 @@ const DetailsPage = () => {
                 <div className="hero-content flex-col lg:flex-row gap-10">
                     <img
                         src={product_image}
-                        className="max-w-sm rounded-lg" />
+                        className="max-w-lg rounded-lg" />
                     <div className='space-y-4'>
                         <h1 className="text-2xl font-semibold ">{product_title}</h1>
                         <h1 className="text-lg font-semibold">Price: $ {price}</h1>
@@ -92,16 +95,19 @@ const DetailsPage = () => {
 
                         <h1 className='text-lg font-bold'>Specification</h1>
 
-                        <ol className='text-black '>
-                            {
-                                detailData.Specification && detailData.Specification.map((item, i) => {
-                                    <li className='list-disc' key={i}> {item} </li>
-                                    console.log(item)
-                                })
-                            }
-                        </ol>
 
-                        <h1>Rating</h1>
+
+                        {
+                            Specification && Specification.map((item, i) => <li key={i}>{item}</li>)
+                        }
+
+
+
+
+
+
+                        <h1 className='font-bold'>Rating : <span className='text-red-600'> {rating} </span> </h1>
+
 
 
                         <div className='flex gap-10'>
