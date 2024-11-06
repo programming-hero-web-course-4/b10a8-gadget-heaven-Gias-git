@@ -11,6 +11,7 @@ import Cart from "../components/Cart";
 import Wishlist from "../components/Wishlist";
 import Stats from "../Pages/Stats";
 import ErrorPage from "../Pages/ErrorPage";
+import Posts from "../components/Posts";
 
 const routes = createBrowserRouter([
     {
@@ -39,6 +40,12 @@ const routes = createBrowserRouter([
             {
                 path: "Stats",
                 element: <Stats></Stats>,
+
+            },
+            {
+                path: "posts",
+                element: <Posts></Posts>,
+                loader: () => fetch('../posts.json'),
 
             },
             {

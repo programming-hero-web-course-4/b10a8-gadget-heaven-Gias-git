@@ -2,6 +2,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { CiHeart } from "react-icons/ci";
 import { useContext, useEffect, useState } from "react";
+import { CardProductNumberContext, CardWishNumberContext } from "../Layouts/MainLayouts";
 
 
 
@@ -12,13 +13,12 @@ import { useContext, useEffect, useState } from "react";
 const Navbar = () => {
 
 
-
-
-
-
     const [cardProducts, setCardProducts] = useState([]);
 
+    const [cardProductNumber, setCardProductNumber] = useContext(CardProductNumberContext);
+    const[WishProductNumber, setWishCardProductNumber] = useContext(CardWishNumberContext);
 
+    console.log(cardProductNumber)
 
     useEffect(() => {
         const cartsDataLocalStorage = JSON.parse(localStorage.getItem('cart-item'));
@@ -43,6 +43,11 @@ const Navbar = () => {
             isActive ? 'bg-slate-300 rounded-lg text-white'
                 : ''
         } to='/stats'><span className={` ${path == '/' ? 'text-[white]' : 'text-[#9538E2]'} text-base  px-4 py-5`}>Stats</span></NavLink>
+
+        <NavLink className={({ isActive }) =>
+            isActive ? 'bg-slate-300 rounded-lg text-white'
+                : ''
+        } to='/posts'><span className={` ${path == '/' ? 'text-[white]' : 'text-[#9538E2]'} text-base  px-4 py-5`}>Posts</span></NavLink>
     </>
 
 
@@ -85,9 +90,9 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end space-x-4">
 
-                    <Link to='/dashboard/cart' className="rounded-full flex relative text-2xl bg-white p-3"><MdOutlineShoppingCart /> <div className="absolute -top-2 bg-red-400 rounded-full -right-2 px-2 py-1 text-sm ">{cardProducts ? cardProducts.length : '0'} </div> </Link>
+                    <Link to='/dashboard/cart' className="rounded-full flex relative text-2xl bg-white p-3"><MdOutlineShoppingCart /> <div className="absolute -top-2 bg-red-400 rounded-full -right-2 px-2 py-1 text-sm ">{cardProductNumber} </div> </Link>
                     <Link to='/dashboard/wishlist' className="rounded-full relative text-2xl bg-white p-3"><CiHeart />
-                        <div className="absolute -top-2 bg-red-400 rounded-full -right-2 px-2 py-1 text-sm ">  </div>
+                        <div className="absolute -top-2 bg-red-400 rounded-full -right-2 px-2 py-1 text-sm ">{WishProductNumber}  </div>
                     </Link>
 
                 </div>

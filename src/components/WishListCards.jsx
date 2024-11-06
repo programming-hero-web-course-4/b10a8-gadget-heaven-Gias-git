@@ -1,31 +1,37 @@
-import React, { createContext, useEffect, useState } from 'react';
-import DashBoardcartsingle from './DashBoardcartsingle';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { getwishLocalStoageData } from '../utilities/WishlistLocalStorage';
+import WishListSinglecard from './WishListSinglecard';
+import { CardWishNumberContext } from '../Layouts/MainLayouts';
+
+
+
 
 
 
 const WishListCards = () => {
 
 
-    const [wishProducts, setWishProducts] = useState([]);
     useEffect(() => {
         const wishDataLocalStorage = JSON.parse(localStorage.getItem('wish-list'));
-        console.log(wishDataLocalStorage)
         setWishProducts(wishDataLocalStorage || []);
     }, [])
 
-    console.log(wishProducts)
-    const handleDeleteProduct = (productId) => {
-        console.log(productId)
+    const [wishProducts, setWishProducts] = useState([]);
+
+    const [WishProductNumber, setWishCardProductNumber] = useContext(CardWishNumberContext);
+
+    const handleWishDeleteProduct = (productId) => {
 
         const wishItemsStored = getwishLocalStoageData();
         const reaminning = wishItemsStored.filter(proudct => proudct.product_id != productId);
-        localStorage.setItem('wish-item', JSON.stringify(reaminning))
+        localStorage.setItem('wish-list', JSON.stringify(reaminning))
         setWishProducts(reaminning);
 
         toast.error('Delete Product Successfully')
+        setWishCardProductNumber(getwishLocalStoageData().length)
+
     };
 
 
@@ -38,7 +44,7 @@ const WishListCards = () => {
 
 
             {
-                wishProducts.map(product => <DashBoardcartsingle wishProducts={wishProducts} handleDeleteProduct={handleDeleteProduct} key={product.product_id} product={product}></DashBoardcartsingle>)
+                wishProducts.map(product => <WishListSinglecard handleWishDeleteProduct={handleWishDeleteProduct} key={product.product_id} product={product}></WishListSinglecard>)
             }
         </div>
 

@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "title": "Top 10 Smartphones of 2024",
+        "description": "A rundown of the best smartphones released in 2024."
+    },
+    {
+        "id": 2,
+        "title": "Smartwatches for Fitness Tracking",
+        "description": "Explore the best smartwatches to keep track of your fitness goals."
+    },
+    {
+        "id": 3,
+        "title": "Best Noise-Canceling Headphones",
+        "description": "An overview of headphones with top-notch noise-canceling features."
+    },
+    {
+        "id": 4,
+        "title": "Laptop Buying Guide 2024",
+        "description": "Tips and recommendations for choosing a laptop that fits your needs."
+    },
+    {
+        "id": 5,
+        "title": "Portable Power Banks",
+        "description": "Find out which power banks provide the best battery life on the go."
+    },
+    {
+        "id": 6,
+        "title": "Wireless Earbuds Comparison",
+        "description": "Comparing the latest wireless earbuds in terms of sound quality and battery life."
+    },
+    {
+        "id": 7,
+        "title": "Best Gaming Consoles",
+        "description": "The top gaming consoles available and what makes each one unique."
+    },
+    {
+        "id": 8,
+        "title": "Robot Vacuum Cleaners",
+        "description": "A review of the best robot vacuums for hassle-free cleaning."
+    },
+    {
+        "id": 9,
+        "title": "Smart Home Assistants",
+        "description": "A guide to choosing the best voice-activated smart home assistant."
+    },
+    {
+        "id": 10,
+        "title": "Top Bluetooth Speakers",
+        "description": "A list of the best Bluetooth speakers for portable, high-quality sound."
+    }
+]

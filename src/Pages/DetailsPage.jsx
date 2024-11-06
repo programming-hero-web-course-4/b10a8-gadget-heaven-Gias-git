@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { Link, useActionData, useLoaderData, useParams } from 'react-router-dom';
 import Heading from '../components/Heading';
 import { MdOutlineShoppingCart } from "react-icons/md";
@@ -7,6 +7,8 @@ import { addTolocalStorage, getLocalStorageData } from '../utilities/Localstorag
 import { addWishListTolocalStorage, getwishLocalStoageData } from '../utilities/WishlistLocalStorage';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet';
+import { CardProductNumberContext, CardWishNumberContext } from '../Layouts/MainLayouts';
 
 
 
@@ -18,8 +20,10 @@ const DetailsPage = () => {
     // <cartContext.Provider value='cartItemNumber'>
     //     <Cart asset={asset}></Cart>
     // </cartContext.Provider>
+    
 
-
+    const [cardProductNumber, setCardProductNumber] = useContext(CardProductNumberContext);
+    const[WishProductNumber, setWishCardProductNumber] = useContext(CardWishNumberContext);
 
 
     const productData = useLoaderData();
@@ -38,13 +42,15 @@ const DetailsPage = () => {
         addTolocalStorage(detailData);
         setIsdisableCartBtn(true);
         toast.success('Product Add Cart Successfully')
-
+        
+        setCardProductNumber(getLocalStorageData().length) 
     }
 
     const handlewishlist = (detailData) => {
         setIsdisablewishtBtn(true)
         addWishListTolocalStorage(detailData);
         toast.success('Product Add WishList Successfully')
+        setWishCardProductNumber(getwishLocalStoageData().length) 
     }
 
 
@@ -73,6 +79,13 @@ const DetailsPage = () => {
     }), [productData, product_title])
     return (
         <div className='bg-gray-100 pb-14 '>
+
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Details</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
+
             <div className='bg-[#9538E2] py-28 mb-8'>
                 <Heading title='Product Details' description='Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!'></Heading>
             </div>
