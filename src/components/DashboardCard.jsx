@@ -4,6 +4,9 @@ import DashBoardcartsingle from './DashBoardcartsingle';
 import Navbar from './Navbar';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { CardProductNumberContext } from '../Layouts/MainLayouts';
+import popupImg from '../assets/Group.png'
+import { useNavigate } from 'react-router-dom';
 
 // import Modal from './Modal';
 
@@ -14,6 +17,7 @@ const DashboardCard = () => {
 
     const [cardProducts, setCardProducts] = useState([]);
 
+    const [cardProductNumber, setCardProductNumber] = useContext(CardProductNumberContext);
 
 
     useEffect(() => {
@@ -55,23 +59,20 @@ const DashboardCard = () => {
         setCardProducts(sortProducts);
     };
 
-    // const [modalActive, setModalActive] = useState(false);
+    const handlePuchase = () => {
 
-    // const handlePuchase = () => {
-    //     setModalActive(true)
+        localStorage.clear('cart-item')
+        const getLocalStoragecart = getLocalStorageData();
+        setCardProducts(getLocalStoragecart)
+        setCardProductNumber(getLocalStoragecart.length)
+    }
+    const navigate = useNavigate();
 
-    //     modalActive &&
-    //         <div className="modal-box">
-    //             <h3 className="font-bold text-lg">Hello!</h3>
-    //             <p className="py-4">Press ESC key or click the button below to close</p>
-    //             <div className="modal-action">
-    //                 <form method="dialog">
-    //                     {/* if there is a button in form, it will close the modal */}
-    //                     <button className="btn">Close</button>
-    //                 </form>
-    //             </div>
-    //         </div>
-    // }
+    const goToHomePage = () => {
+        navigate('/'); // Navigates to the '/home' route
+    };
+
+
 
     return (
 
@@ -81,7 +82,34 @@ const DashboardCard = () => {
                 <div className='flex gap-8 items-center'>
                     <h1 className='text-3xl font-bold'>Total Cost : {cost} $ </h1>
                     <button onClick={() => { handleDecPrice(cardProducts) }} className='px-8 py-4 rounded-lg border-[#9538E2] border-2'>Sort By Price</button>
-                    <button disabled={cost==0? true: false}  onClick={() => handlePuchase(cardProducts)} className={`px-8 py-4 text-white  rounded-lg ${cost == 0? 'bg-[#c3bec7]': 'bg-[#9538E2]'} `}>Purchase</button>
+                    <span onClick={() => document.getElementById('my_modal_5').showModal()}> <button disabled={cost == 0 ? true : false} className={`px-8 py-4 text-white  rounded-lg ${cost == 0 ? 'bg-[#c3bec7]' : 'bg-[#9538E2]'} `}> Purchase</button></span>
+                    <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+                        <div className="modal-box">
+
+
+
+                            <img className='w-10 mx-auto' src={popupImg} alt="" />
+
+
+                            <h3 className="font-bold text-lg text-center mt-4">Payment Successfully!</h3>
+                            <p className="py-2 text-center">Thanks For Purchasing</p>
+                            <p className="py-1 text-center">Total: {cost}</p>
+
+
+
+
+                            <div className="modal-action">
+                                <form method="dialog">
+                                    {/* if there is a button in form, it will close the modal */}
+                                    <div className=''>
+                                        <span onClick={() => handlePuchase()} ><button onClick={() => goToHomePage()} className="btn w-full">Close</button> </span>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </dialog>
+
                 </div>
             </div>
             <div className='w-8/12 mx-auto space-y-10'>
@@ -90,21 +118,6 @@ const DashboardCard = () => {
                 }
             </div>
 
-            <div>
-
-                <dialog id="my_modal_1" className="modal">
-                    <div className="modal-box">
-                        <h3 className="font-bold text-lg">Hello!</h3>
-                        <p className="py-4">Press ESC key or click the button below to close</p>
-                        <div className="modal-action">
-                            <form method="dialog">
-                                {/* if there is a button in form, it will close the modal */}
-                                <button className="btn">Close</button>
-                            </form>
-                        </div>
-                    </div>
-                </dialog>
-            </div>
         </div>
 
 

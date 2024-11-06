@@ -15,7 +15,7 @@ const Product = ({product}) => {
                 </figure>
                 <div className="card-body ">
                     <h2 className="card-title">{product_title}</h2>
-                    <p>{price}</p>
+                    <p>$ {price}</p>
                     <div className="card-actions justify-start">
                         <Link to={`/detailspage/${product_title}`} > <button className="px-5 py-3 border-2 border-[#9538E2] rounded-2xl text-[#9538E2]">View Details</button> </Link>
                         

@@ -174,5 +174,54 @@
     ],
     "availability": true,
     "rating": 4.7
+  },
+  {
+    "product_id": 601,
+    "product_title": "Samsung 45W Super Fast Charger",
+    "product_image": "https://adminapi.applegadgetsbd.com/storage/media/large/Samsung-Travel-Adapter-45W-Super-Fast-Charging-&-USB-Type-C-Cable-2006-4053.jpg",
+    "category": "Charger",
+    "price": 130,
+    "description": "A powerful and efficient charger for Samsung Galaxy devices.",
+    "Specification": [
+      "45W charging speed",
+      "USB-C output",
+      "Compatible with Galaxy S and Tab series",
+      "Compact design"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": 602,
+    "product_title": "Anker PowerPort Atom III 60W USB-C Charger",
+    "product_image": "https://istatic.ifixit.com.bd/uploads/2023-6-23/anker-powerport-atom-iii-duo-thumbnail-300*200.jpg",
+    "category": "Charger",
+    "price": 129.99,
+    "description": "A fast and compact USB-C charger suitable for phones, tablets, and laptops.",
+    "Specification": [
+      "60W charging output",
+      "USB-C Power Delivery",
+      "Compact and travel-friendly",
+      "Multi-protection safety system"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": 603,
+    "product_title": "Apple 20W USB-C Power Adapter",
+    "product_image": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MU7T2_GEO_PH?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1542406420416",
+    "category": "Charger",
+    "price": 109.99,
+    "description": "A reliable and efficient charger for Apple devices.",
+    "Specification": [
+      "20W fast charging",
+      "USB-C output",
+      "Compact design",
+      "Compatible with iPhone and iPad"
+    ],
+    "availability": true,
+    "rating": 4.5
   }
+  
 ]

@@ -20,10 +20,10 @@ const DetailsPage = () => {
     // <cartContext.Provider value='cartItemNumber'>
     //     <Cart asset={asset}></Cart>
     // </cartContext.Provider>
-    
+
 
     const [cardProductNumber, setCardProductNumber] = useContext(CardProductNumberContext);
-    const[WishProductNumber, setWishCardProductNumber] = useContext(CardWishNumberContext);
+    const [WishProductNumber, setWishCardProductNumber] = useContext(CardWishNumberContext);
 
 
     const productData = useLoaderData();
@@ -42,15 +42,15 @@ const DetailsPage = () => {
         addTolocalStorage(detailData);
         setIsdisableCartBtn(true);
         toast.success('Product Add Cart Successfully')
-        
-        setCardProductNumber(getLocalStorageData().length) 
+
+        setCardProductNumber(getLocalStorageData().length)
     }
 
     const handlewishlist = (detailData) => {
         setIsdisablewishtBtn(true)
         addWishListTolocalStorage(detailData);
         toast.success('Product Add WishList Successfully')
-        setWishCardProductNumber(getwishLocalStoageData().length) 
+        setWishCardProductNumber(getwishLocalStoageData().length)
     }
 
 
@@ -114,7 +114,13 @@ const DetailsPage = () => {
                             Specification && Specification.map((item, i) => <li key={i}>{item}</li>)
                         }
 
-
+                        <div className="rating">
+                            <input type="radio" name="rating-1" className="mask mask-star" />
+                            <input type="radio" name="rating-1" className="mask mask-star" />
+                            <input type="radio" name="rating-1" className="mask mask-star" />
+                            <input type="radio" name="rating-1" className="mask mask-star" />
+                            <input type="radio" name="rating-1" className="mask mask-star" />
+                        </div>
 
 
 

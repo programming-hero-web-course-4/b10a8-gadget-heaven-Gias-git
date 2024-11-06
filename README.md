@@ -1,8 +1,25 @@
-# React + Vite
+# Link Website Link : https://small-team.surge.sh/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#  Requirement Document Link : https://drive.google.com/file/d/1v_OkroKwsIvxeJl2_gMPkOtcGQ9uEoWR/view?usp=sharing
 
-Currently, two official plugins are available:
+##  List of React Fundamental concepts used in the project
+- react Route
+- useEffect
+- useLocation
+- useState
+- Context_api
+- Rechart
+- Reuseable component
+- Some important react hooks
+- Many more
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## used for handling and managing data 
+- context API & local storage Both
+
+## 5features of your website/project
+- product data could be load dynamically and categories also load dynamically
+- show product by categories
+- product details 
+- product can add to cart and add to wish list and also remove it from cart
+- purchase product and data could be stored in local storage 
+
