@@ -1,6 +1,8 @@
-# Link Website Link : https://small-team.surge.sh/
+# Link Website Link 
+ - https://small-team.surge.sh/
 
-#  Requirement Document Link : https://drive.google.com/file/d/1v_OkroKwsIvxeJl2_gMPkOtcGQ9uEoWR/view?usp=sharing
+# Requirement Document Link 
+- https://drive.google.com/file/d/1v_OkroKwsIvxeJl2_gMPkOtcGQ9uEoWR/view?usp=sharing
 
 ##  List of React Fundamental concepts used in the project
 - react Route
